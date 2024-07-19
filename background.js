@@ -5,7 +5,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       timestamps.push({
         title: message.title,
         timestamp: message.timestamp,
-        url: message.url
+        url: message.url,
+        videoId: message.videoId
       });
       chrome.storage.sync.set({ timestamps }, () => {
         console.log('Timestamp saved');

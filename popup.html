@@ -14,11 +14,23 @@
       text-decoration: none;
       color: blue;
     }
+    button {
+      margin-top: 10px;
+      padding: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <h1>Timestamps</h1>
-  <div id="timestamps"></div>
+  <h1>Current Video Timestamps</h1>
+  <div id="current-timestamps"></div>
+  <button id="show-all">Show All Timestamps</button>
+  <h1>All Timestamps</h1>
+  <div id="all-timestamps" style="display: none;"></div>
   <script src="popup.js"></script>
 </body>
 </html>

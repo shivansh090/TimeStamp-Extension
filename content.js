@@ -2,7 +2,7 @@
 const button = document.createElement('button');
 button.textContent = 'Save Timestamp';
 button.style.position = 'fixed';
-button.style.top = '10px';
+button.style.top = '110px';
 button.style.right = '10px';
 button.style.zIndex = 1000;
 button.style.padding = '10px';
@@ -18,11 +18,13 @@ button.addEventListener('click', () => {
   const video = document.querySelector('video');
   const currentTime = video ? video.currentTime : 0;
   const title = document.title;
+  const videoId = new URLSearchParams(window.location.search).get('v');
 
   chrome.runtime.sendMessage({
     type: 'saveTimestamp',
     title: title,
     timestamp: currentTime,
-    url: window.location.href
+    url: window.location.href,
+    videoId: videoId
   });
 });
